@@ -6,9 +6,12 @@
     --primary: #9810fa;
 
   --muted: #6b7280;              /* secondary text */
-  --border: ##d1d5db ;             /* subtle borders */
+  --border: ##d1d5db ;             /*  borders */
   --card: #ffffff;               /* surface for grouped UI */
   --primary-foreground: #ffffff;
+
+ --pill-bg: #f4ecff;
+--pill-bg-hover: #ede0ff;  
 }
 
 @theme inline {
@@ -34,7 +37,7 @@
     .section-subheading {
         @apply text-lg text-neutral-800 mb-8;
     }
-
+/*  ___Toast.tsx__________ */
    .toast {
   @apply fixed top-19 left-1/2 
          px-4 py-2 rounded-full
@@ -59,4 +62,46 @@
   transform: translate(-50%, 0);
 }
 
+/* ___SocialProof_________ */
+
+.marquee {
+    @apply relative overflow-hidden w-full;
+  }
+
+  .marquee__track {
+    @apply flex items-center gap-4 whitespace-nowrap;
+
+    width: max-content;
+    animation: marquee-scroll 20s linear infinite;
+  }
+
+  /* Pause on hover OR keyboard focus */
+  .marquee:hover .marquee__track,
+  .marquee:focus-within .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .brand-pill {
+    @apply px-5 py-2 rounded-full text-sm font-medium
+           text-foreground border border-border
+           transition-colors transition-transform;
+
+    background-color: var(--pill-bg);
+  }
+
+  .brand-pill:hover {
+    transform: translateX(-5%);
+
+    background-color: var(--pill-bg-hover);
+  }
+
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
