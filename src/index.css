@@ -11,7 +11,9 @@
   --primary-foreground: #ffffff;
 
  --pill-bg: #f4ecff;
---pill-bg-hover: #ede0ff;  
+--pill-bg-hover: #ede0ff; 
+
+--primary-soft: #f3e8ff;
 }
 
 @theme inline {
@@ -22,6 +24,8 @@
     --color-border: var(--border);
     --color-card: var(--card);
     --color-primary-foreground: var(--primary-foreground);
+
+    --color-primary-soft: var(--primary-soft);
 }
 
 
@@ -49,9 +53,7 @@
 
   transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Push it up by its own height (100%) 
-     PLUS the 5rem (top-20) distance from the edge.
-  */
+
   transform: translate(-50%, calc(-100% - 6rem)); 
 }
 
@@ -95,6 +97,38 @@
     background-color: var(--pill-bg-hover);
   }
 
+/* ___Feature Card__________ */
+
+ .feature-card {
+    @apply p-6 rounded-2xl h-full
+           bg-card border border-border
+           shadow-sm
+           transition-shadow transition-transform;
+  }
+
+  .feature-card:hover {
+    @apply shadow-md -translate-y-1;
+  }
+
+  .feature-card__icon {
+    @apply flex items-center justify-center
+           w-11 h-11 rounded-xl mb-4
+           text-primary;
+
+    background-color: var(--primary-soft);
+  }
+
+  .feature-card__title {
+    @apply text-base font-semibold text-foreground;
+  }
+
+  .feature-card__desc {
+    @apply mt-1 text-sm text-muted;
+  }
+
+  .feature-card__note {
+    @apply mt-2 text-xs text-muted;
+  }
 }
 
 @keyframes marquee-scroll {
