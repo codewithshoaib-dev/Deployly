@@ -129,7 +129,7 @@
   .feature-card__note {
     @apply mt-2 text-xs text-muted;
   }
-
+/*  ____Testimonials__________ */
    .testimonials-bg {
     position: absolute;
     inset: 0;
@@ -158,6 +158,62 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   }
+
+/* ____Footer_________ */
+
+ .footer {
+    @apply bg-background border-t border-border px-6 pb-8 pt-16;
+  }
+
+  .footer__inner {
+    @apply max-w-6xl mx-auto grid gap-12 md:grid-cols-3;
+  }
+
+  .footer__brand {
+    @apply flex flex-col gap-2;
+  }
+
+  .footer__logo {
+    @apply text-xl font-semibold text-foreground;
+  }
+
+  .footer__tagline {
+    @apply text-sm text-muted;
+  }
+
+  .footer__grid {
+    @apply grid grid-cols-2 gap-8 sm:grid-cols-3 text-sm;
+  }
+
+  .footer__title {
+    @apply text-xs font-semibold uppercase tracking-wider text-foreground mb-3;
+  }
+
+  .footer__grid a {
+    @apply block text-muted mb-2 transition-colors;
+  }
+
+  .footer__grid a:hover {
+    @apply text-foreground;
+  }
+
+  .footer__social {
+    @apply flex gap-4 md:justify-end items-start text-muted;
+  }
+
+  .footer__social a {
+    @apply text-lg transition-colors;
+  }
+
+  .footer__social a:hover {
+    color: var(--primary);
+  }
+
+  .footer__bottom {
+    @apply mt-12 text-center text-xs text-muted;
+  }
+
+
 }
 
 @keyframes marquee-scroll {
