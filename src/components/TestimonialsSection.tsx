@@ -1,31 +1,47 @@
 export default function Testimonials() {
+  return (
+    <section className="relative py-28 px-6 overflow-hidden">
+      {/* Background accent */}
+      <div className="testimonials-bg" />
 
-    return (
-      <section className="py-24 px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-16 text-foreground">
-          What Our Users Say
-        </h2>
+      <div className="relative max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+            Loved by teams shipping fast
+          </h2>
+          <p className="mt-3 text-muted">
+            Real results from real SaaS teams using Deployly.
+          </p>
+        </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          <blockquote className="bg-neutral-200 p-6 rounded-2xl border border-neutral-800 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg">
-            <p className="italic text-neutral-900 text-lg leading-relaxed">
+        {/* Layout */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Main testimonial */}
+          <div className="space-y-6">
+            <p className="text-lg md:text-2xl leading-snug text-foreground font-medium">
               “Deployly cut our deploy time by 90%. We moved off Heroku in a
               weekend.”
             </p>
-            <footer className="mt-6 text-sm text-neutral-500">
+            <footer className="text-sm text-muted">
               — Emma T., CTO @ Shipline
             </footer>
-          </blockquote>
+          </div>
 
-          <blockquote className="bg-neutral-200 p-6 rounded-2xl border border-neutral-800 shadow-sm transition-all hover:scale-[1.02] hover:shadow-lg">
-            <p className="italic text-neutral-900 text-lg leading-relaxed">
+          {/* Floating stack */}
+          <div className="relative h-55">
+            <div className="testimonial-float top-0 left-6">
               “Honestly, I forgot how to ssh — and that’s a good thing.”
-            </p>
-            <footer className="mt-6 text-sm text-neutral-500">
-              — Jordan C., Timely
-            </footer>
-          </blockquote>
+              <span>— Jordan C., Timely</span>
+            </div>
+
+            <div className="testimonial-float bottom-0 right-6">
+              “Setup took minutes. Scaling took care of itself.”
+              <span>— Alex R., Beamboard</span>
+            </div>
+          </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

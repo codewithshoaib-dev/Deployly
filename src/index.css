@@ -5,7 +5,7 @@
     --background: #f0f2f5;
     --primary: #9810fa;
 
-  --muted: #6b7280;              /* secondary text */
+  --muted: #525252;              /* secondary text */
   --border: ##d1d5db ;             /*  borders */
   --card: #ffffff;               /* surface for grouped UI */
   --primary-foreground: #ffffff;
@@ -128,6 +128,35 @@
 
   .feature-card__note {
     @apply mt-2 text-xs text-muted;
+  }
+
+   .testimonials-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 30% 20%,
+      var(--primary-soft),
+      transparent 60%
+    );
+    opacity: 0.6;
+  }
+
+  .testimonial-float {
+    @apply absolute max-w-xs p-4 rounded-xl
+           text-sm leading-relaxed
+           bg-card border border-border
+           shadow-md text-foreground;
+
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .testimonial-float span {
+    @apply block mt-2 text-xs text-muted;
+  }
+
+  .testimonial-float:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   }
 }
 
