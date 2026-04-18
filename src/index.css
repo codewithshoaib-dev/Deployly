@@ -2,11 +2,11 @@
 
 :root {
     --foreground: #0a0a0a;
-    --background: #f5f5f5;
+    --background: #f0f2f5;
     --primary: #9810fa;
 
   --muted: #6b7280;              /* secondary text */
-  --border: #e5e7eb;             /* subtle borders */
+  --border: ##d1d5db ;             /* subtle borders */
   --card: #ffffff;               /* surface for grouped UI */
   --primary-foreground: #ffffff;
 }
@@ -24,7 +24,7 @@
 
 @layer components {
     .btn-primary {
-        @apply  bg-black text-white px-5 py-2 rounded-xl font-semibold hover:bg-neutral-900 hover:scale-105 transition;
+        @apply  bg-foreground text-background px-5 py-2 rounded-xl font-semibold hover:bg-neutral-900 hover:scale-105 transition;
     }
 
     .section-heading {
