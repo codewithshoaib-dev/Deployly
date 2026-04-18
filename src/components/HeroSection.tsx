@@ -1,14 +1,18 @@
-export default function Hero({
-  setModal,
-}: {
+import { Toast } from "../ui/Toast";
+
+type HeroProps = {
   setModal: (value: boolean) => void;
-}) {
+  showToast: boolean;
+  setShowToast: (value: boolean) => void;
+};
+
+export default function Hero({ setModal, showToast, setShowToast }: HeroProps) {
   const handleClick = () => {
-    alert("This is a UI demo, full flow available on request.");
+    setShowToast(true)
   };
 
   return (
-    <section className="pt-28 pb-24 px-6">
+    <section className="pt-28 pb-6 px-6">
       <div className="max-w-3xl mx-auto text-center">
         {/* Heading */}
         <h1 className="text-5xl md:text-6xl font-semibold text-foreground leading-tight">
@@ -40,6 +44,11 @@ export default function Hero({
           </button>
         </div>
       </div>
+      <Toast
+        message="This is a UI demo, full flow available on request."
+        show={showToast}
+        setToast={setShowToast}
+      />
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Toast } from "../ui/Toast";
 
 const PricingData = {
   monthly: [
@@ -58,7 +59,13 @@ const PricingData = {
   ],
 };
 
-export default function PricingSection() {
+
+type PricingProps = {
+  showToast: boolean;
+  setShowToast: (value: boolean) => void;
+};
+
+export default function PricingSection({ showToast , setShowToast} : PricingProps) {
   const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [selectedPlan, setSelectedPlan] = useState<{
     title: string;
@@ -69,7 +76,7 @@ export default function PricingSection() {
   const suffix = billing === "monthly" ? "/mo" : "/yr";
 
   const handleClick = () => {
-    alert("This Feature is not available in Demo!");
+    setShowToast(true);
   };
 
   return (
@@ -164,6 +171,10 @@ export default function PricingSection() {
           </button>
         </div>
       )}
+      <Toast message="This is a UI demo, full flow available on request."
+         show={showToast}
+         setToast={setShowToast}
+      />
     </section>
   );
 }

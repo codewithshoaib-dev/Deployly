@@ -34,4 +34,29 @@
     .section-subheading {
         @apply text-lg text-neutral-800 mb-8;
     }
+
+   .toast {
+  @apply fixed top-19 left-1/2 
+         px-4 py-2 rounded-full
+         text-sm font-medium
+         bg-foreground text-background
+         shadow-md
+         pointer-events-none
+         z-51;
+
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Push it up by its own height (100%) 
+     PLUS the 5rem (top-20) distance from the edge.
+  */
+  transform: translate(-50%, calc(-100% - 6rem)); 
+}
+
+.toast--visible {
+  @apply pointer-events-auto;
+
+  /* Return to the natural position defined by top-20 */
+  transform: translate(-50%, 0);
+}
+
 }

@@ -19,7 +19,8 @@ import UseCases from "./components/UseCasesSection";
 
 
 export default function DeploylyLanding() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [showToast, setShowToast] = useState<boolean>(false);
 
   return (
     <div className="min-h-screen text-neutral-950 bg-neutral-100 font-sans scrollbar">
@@ -35,6 +36,8 @@ export default function DeploylyLanding() {
         <section id="hero">
           <Hero
             setModal={setIsModalOpen}
+            showToast={showToast}
+            setShowToast={setShowToast}
           />
         </section>
 
@@ -43,7 +46,7 @@ export default function DeploylyLanding() {
         </section>
 
         <section id="features">
-          <Features  />
+          <Features />
         </section>
 
         <section id="use-cases">
@@ -55,13 +58,11 @@ export default function DeploylyLanding() {
         </section>
 
         <section id="pricing">
-          <PricingSection  />
+          <PricingSection showToast={showToast} setShowToast={setShowToast} />
         </section>
 
         <section id="cta">
-          <CTASection
-            setModal={setIsModalOpen}
-          />
+          <CTASection setModal={setIsModalOpen} />
         </section>
       </main>
       <Footer />
