@@ -1,4 +1,4 @@
-import DeploylyLanding from "./SaaSLandingPage"
+import DeploylyLanding from "./LandingPage"
 
 function App() {
 

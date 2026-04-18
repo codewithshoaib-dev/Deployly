@@ -15,7 +15,7 @@ import Testimonials from "./components/TestimonialsSection";
 import UseCases from "./components/UseCasesSection";
 
 
-// import SectionEditorModal from "./components/Modal";
+ import DemoModal from "./components/Modal";
 
 
 export default function DeploylyLanding() {
@@ -27,10 +27,10 @@ export default function DeploylyLanding() {
       <Header setModal={setIsModalOpen} />
 
       <section>
-        {/* <SectionEditorModal
-          open={isModalOpen}
+        <DemoModal
+          isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-        /> */}
+        />
       </section>
       <main>
         <section id="hero">
